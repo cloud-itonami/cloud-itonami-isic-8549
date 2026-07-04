@@ -1,4 +1,4 @@
-{:itonami.blueprint/id "cloud-itonami-8549"
+{:itonami.blueprint/id "cloud-itonami-isic-8549"
  :itonami.blueprint/name "Other education n.e.c."
  :itonami.blueprint/isic-rev5 "8549"
  :itonami.blueprint/domain :education/other-education

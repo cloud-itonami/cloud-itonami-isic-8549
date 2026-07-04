@@ -1,6 +1,6 @@
 # Governance
 
-`cloud-itonami-8549` is an OSS open-business blueprint for other education not elsewhere classified (e.g. driving schools, exam-preparation courses, corporate training).
+`cloud-itonami-isic-8549` is an OSS open-business blueprint for other education not elsewhere classified (e.g. driving schools, exam-preparation courses, corporate training).
 Governance covers both the capability layer and the operator model.
 
 ## Maintainers

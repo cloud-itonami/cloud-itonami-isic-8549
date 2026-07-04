@@ -2,7 +2,7 @@
 
 ## Classification
 
-- Repository: `cloud-itonami-8549`
+- Repository: `cloud-itonami-isic-8549`
 - ISIC Rev.5: `8549`
 - Activity: other education not elsewhere classified (e.g. driving schools, exam-preparation courses, corporate training)
 - Social impact: education access, data sovereignty, transparent audit

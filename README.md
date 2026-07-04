@@ -1,4 +1,4 @@
-# cloud-itonami-8549
+# cloud-itonami-isic-8549
 
 Open Business Blueprint for **ISIC Rev.5 8549**: Other education n.e.c..
 
