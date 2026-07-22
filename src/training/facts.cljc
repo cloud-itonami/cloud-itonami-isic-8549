@@ -26,7 +26,18 @@
   their competency is themselves a licensed driving instructor -- a
   structurally different kind of check from anything else in this
   fleet: verifying the credential of the ASSESSOR, not a fact about
-  the subject being assessed.")
+  the subject being assessed.
+
+  \"CAN\" (Canada) is modeled HONESTLY as Ontario specifically, NOT
+  as a single pan-Canadian figure -- private career-college /
+  vocational-training regulation in Canada is provincial (there is
+  no single federal registrar or federal career-college statute),
+  the same structural reality `secondary.facts`/sibling catalogs
+  disclose for the USA's state-level licensing regime. Ontario was
+  picked as one concrete, citable jurisdiction (Ministry of
+  Colleges, Universities, Research Excellence and Security /
+  Career Colleges Act, 2005) rather than leaving `\"CAN\"` unmodeled;
+  this is coverage of Ontario, not a claim of national coverage.")
 
 (def catalog
   "iso3 -> requirement map. `:required-evidence` mirrors the generic
@@ -85,7 +96,19 @@
                               "Abschlusszertifizierungsprotokoll (completion-record)"]
           :instructor-owner-authority "Fahrerlaubnisbehörden der Länder (regional driving-license authorities)"
           :instructor-legal-basis "Fahrlehrergesetz (FahrlG) -- Fahrlehrerlaubnis (driving instructor license)"
-          :instructor-provenance "https://www.gesetze-im-internet.de/fahrlg/"}})
+          :instructor-provenance "https://www.gesetze-im-internet.de/fahrlg/"}
+   "CAN" {:name "Canada (Ontario)"
+          :owner-authority "Ontario Ministry of Colleges, Universities, Research Excellence and Security -- Superintendent of career colleges, appointed under s. 2(1) of the Act"
+          :legal-basis "Career Colleges Act, 2005 (Ontario), S.O. 2005, c. 28, Sched. L -- renamed from the Private Career Colleges Act, 2005 effective 2024-01-01; registration required by s. 7(1); operating an unregistered career college is an offence under s. 48(1)(c), punishable under s. 48(2) (individual: fine up to $50,000 and/or up to 1 year imprisonment; corporation: fine up to $250,000)"
+          :national-spec "Career college registration (Part IV, ss. 13-22) and the Training Completion Assurance Fund (s. 3(1); premiums/levies under s. 5(1))"
+          :provenance "https://www.ontario.ca/laws/statute/05p28"
+          :required-evidence ["Student-enrollment-consent record"
+                              "Curriculum record"
+                              "Instructor-license-verification record"
+                              "Completion record"]
+          :instructor-owner-authority "Ontario Ministry of Transportation"
+          :instructor-legal-basis "Highway Traffic Act, R.S.O. 1990, c. H.8, s. 58(1) -- driving instructor licence requirement; O. Reg. 473/07 (Licences for Driving Instructors and Driving Schools), ss. 2-4 -- prescribed class of driving instruction, authorization, and licence requirements"
+          :instructor-provenance "https://www.ontario.ca/laws/regulation/070473"}})
 
 (defn spec-basis
   "The jurisdiction's requirement map, or nil -- nil means NO spec-basis,
