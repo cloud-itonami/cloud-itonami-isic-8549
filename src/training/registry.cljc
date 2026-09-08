@@ -25,7 +25,7 @@
   completion record itself (that is `training.operation`'s
   `:actuation/finalize-completion`, always human-gated -- see README
   `Actuation`)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- unsigned-certificate
   "Every certificate this actor produces is UNSIGNED -- signature is the
@@ -69,7 +69,7 @@
     (throw (ex-info "completion-finalization: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "completion-finalization: sequence must be >= 0" {})))
-  (let [completion-number (str (str/upper-case jurisdiction) "-CMP-" (zero-pad sequence 6))
+  (let [completion-number (str (str/upper jurisdiction) "-CMP-" (zero-pad sequence 6))
         record {"record_id" completion-number
                 "kind" "completion-finalization-draft"
                 "student_id" student-id
