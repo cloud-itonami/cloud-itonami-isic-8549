@@ -141,7 +141,7 @@ autonomous, at any phase, by construction.** Two independent layers
 enforce this (`training.governor`'s `:actuation/finalize-completion`
 high-stakes gate and `training.phase`'s phase table, which never puts
 `:actuation/finalize-completion` in any phase's `:auto` set) -- see
-`training.phase`'s docstring and `test/training/phase_test.clj`'s
+`training.phase`'s docstring and `test/training/phase_test.kotoba`'s
 `finalize-completion-never-auto-at-any-phase`. The actor may draft,
 check and recommend; a human licensed educator is always the one who
 actually finalizes a completion record. Following `sports`/8541's and
@@ -231,14 +231,14 @@ stack only -- no bespoke domain capability lib to reference at all.
 
 | File | Role |
 |---|---|
-| `src/training/store.cljc` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + completion-finalization history. No dynamically-filed sub-record -- the actuation op acts directly on a pre-seeded student, and the double-finalization guard checks a dedicated `:completion-finalized?` boolean rather than a `:status` value |
-| `src/training/registry.cljc` | Completion-finalization draft records, plus `practice-hours-insufficient?` -- an HONEST, literal reuse of `cultural.registry`'s own NINTH-instance MINIMUM-threshold sufficiency check, not claimed as new |
-| `src/training/facts.cljc` | Per-jurisdiction training-provider catalog AND a SEPARATE driving-instructor-licensing citation per jurisdiction (a genuine extension beyond `cultural.facts`'s own child-performer-permit-only catalog) with an official spec-basis citation per entry, honest coverage reporting |
-| `src/training/edopsllm.cljc` | **EdOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/curriculum-verification/instructor-license-screening/completion-finalization proposals |
-| `src/training/governor.cljc` | **Instruction Integrity Governor** -- 4 checks: spec-basis · evidence-incomplete · practice-hours-insufficient (honest reuse) · instructor-license-unconfirmed (CONDITIONAL unconditional-evaluation, GENUINELY NEW, the 66th grounding of this discipline and the THIRD conditional variant -- structurally different from every prior instance, verifying a fact about the ASSESSOR rather than the subject), + already-finalized guard + 1 soft (confidence/actuation gate) |
-| `src/training/phase.cljc` | **Phase 0→3** -- read-only → assisted intake → assisted verify → supervised (completion finalization always human; student intake is the ONLY auto-eligible op, no direct capital risk) |
-| `src/training/operation.cljc` | **OperationActor** -- langgraph StateGraph |
-| `src/training/sim.cljc` | demo driver |
+| `src/training/store.kotoba` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + completion-finalization history. No dynamically-filed sub-record -- the actuation op acts directly on a pre-seeded student, and the double-finalization guard checks a dedicated `:completion-finalized?` boolean rather than a `:status` value |
+| `src/training/registry.kotoba` | Completion-finalization draft records, plus `practice-hours-insufficient?` -- an HONEST, literal reuse of `cultural.registry`'s own NINTH-instance MINIMUM-threshold sufficiency check, not claimed as new |
+| `src/training/facts.kotoba` | Per-jurisdiction training-provider catalog AND a SEPARATE driving-instructor-licensing citation per jurisdiction (a genuine extension beyond `cultural.facts`'s own child-performer-permit-only catalog) with an official spec-basis citation per entry, honest coverage reporting |
+| `src/training/edopsllm.kotoba` | **EdOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/curriculum-verification/instructor-license-screening/completion-finalization proposals |
+| `src/training/governor.kotoba` | **Instruction Integrity Governor** -- 4 checks: spec-basis · evidence-incomplete · practice-hours-insufficient (honest reuse) · instructor-license-unconfirmed (CONDITIONAL unconditional-evaluation, GENUINELY NEW, the 66th grounding of this discipline and the THIRD conditional variant -- structurally different from every prior instance, verifying a fact about the ASSESSOR rather than the subject), + already-finalized guard + 1 soft (confidence/actuation gate) |
+| `src/training/phase.kotoba` | **Phase 0→3** -- read-only → assisted intake → assisted verify → supervised (completion finalization always human; student intake is the ONLY auto-eligible op, no direct capital risk) |
+| `src/training/operation.kotoba` | **OperationActor** -- langgraph StateGraph |
+| `src/training/sim.kotoba` | demo driver |
 | `test/training/*_test.clj` | governor contract · phase invariants · store parity · registry conformance · facts coverage |
 
 ## Business-process coverage (honest)
