@@ -196,7 +196,7 @@ new, more specific driving-instructor-licensing concern.
   `test/training/store_contract_test.kotoba`, the same `:db-api`-driven
   swap pattern every sibling actor uses.
 - 32 tests / 141 assertions pass; lint is clean; the demo
-  (`clojure -M:dev:run`) walks one clean single-actuation lifecycle
+  (`kbb -M:dev:run`) walks one clean single-actuation lifecycle
   plus three HARD-hold scenarios and one conditional-noop scenario
   end-to-end.
 - `blueprint.edn` required no field-sync fixes this time (already

@@ -21,7 +21,7 @@
   one derives it.)
 
   The scenario is adapted from this repo's own `training.sim` demo
-  driver (`clojure -M:dev:run`, run BEFORE this file was written to
+  driver (`kbb -M:dev:run`, run BEFORE this file was written to
   confirm it produces a sensible ledger against the real seeded student
   ids `student-1`..`student-5`), and EXTENDED: `sim` exercises four of
   the Instruction Integrity Governor's five HARD rules, leaving
@@ -35,7 +35,7 @@
   same seed -- verify by diffing two consecutive runs into scratch
   directories.
 
-  Usage: `clojure -M:dev:render-html [out-file]`
+  Usage: `kbb -M:dev:render-html [out-file]`
   (default `docs/samples/operator-console.html`)."
   (:require [jp-go-dds.skin]
             [kotoba.lang.text :as str]
@@ -381,7 +381,7 @@
      (section
       "Students"
       (str "Demo snapshot — build-time-generated from " (code "training.store")
-           " via " (code "training.render-html") " (" (code "clojure -M:dev:render-html")
+           " via " (code "training.render-html") " (" (code "kbb -M:dev:render-html")
            "). Every row is the seeded student record as the actor left it; "
            "practice hours and instructor-license state are the governor's own ground truth inputs.")
       (table ["Student" "Name" "Jurisdiction" "Practice hours" "Instructor license"
