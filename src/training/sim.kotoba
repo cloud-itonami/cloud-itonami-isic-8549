@@ -1,5 +1,5 @@
 (ns training.sim
-  "Demo driver -- `clojure -M:dev:run`. Walks a clean student through
+  "Demo driver -- `kbb -M:dev:run`. Walks a clean student through
   intake -> curriculum verification -> instructor-license screening ->
   completion-finalization proposal (always escalates) -> human approval
   -> commit, then shows five HARD holds (a jurisdiction with no spec-
